@@ -1,0 +1,9 @@
+Utils\JsonFileReader.class
+Utils\Scrolls.class
+Pages\ConfirmationPage.class
+Utils\ConfigFileReader.class
+Pages\loginPage.class
+Pages\CheckoutPage.class
+Utils\drivermanager.class
+Pages\productPage.class
+Pages\OrderPlacingPage.class

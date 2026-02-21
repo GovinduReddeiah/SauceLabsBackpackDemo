@@ -1,0 +1,46 @@
+package Hooks;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import com.google.common.io.Files;
+
+import Utils.drivermanager;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+
+public class hooks {
+	
+	WebDriver driver;
+	
+	@Before
+	public void DriverSetUp() {
+		drivermanager.DriverInit();
+		
+	}
+	
+	@After
+	public void tearDown(Scenario scenario) {
+		if (scenario.isFailed()) {
+		    File screenshot = ((TakesScreenshot) drivermanager.DriverInit())
+		            .getScreenshotAs(OutputType.FILE);
+		    try {
+				FileUtils.copyFile(screenshot,
+				    new File("target/screenshots/" + scenario.getName() + ".png"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		    finally {
+				drivermanager.QuitBrowser();
+			}
+		}
+		
+	}
+
+}

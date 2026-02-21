@@ -1,0 +1,13 @@
+{
+	"UserData":{
+		"UserName":"standard_user",
+		"Password":"secret_sauce",
+		"invalidUserName":"Invalid_user",
+		"inValidPassword":"Invalid_pswd"
+		},
+	"CheckOutData":{
+			"Firstname":"reddeiah",
+			"LastName":"Govindu",
+			"PostalCode":"501301"
+		}
+}
