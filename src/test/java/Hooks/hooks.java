@@ -16,31 +16,31 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 public class hooks {
-	
-	WebDriver driver;
-	
+
+
+
 	@Before
 	public void DriverSetUp() {
 		drivermanager.DriverInit();
-		
+
 	}
-	
+
 	@After
 	public void tearDown(Scenario scenario) {
-		if (scenario.isFailed()) {
-		    File screenshot = ((TakesScreenshot) drivermanager.DriverInit())
-		            .getScreenshotAs(OutputType.FILE);
-		    try {
-				FileUtils.copyFile(screenshot,
-				    new File("target/screenshots/" + scenario.getName() + ".png"));
-			} catch (IOException e) {
-				e.printStackTrace();
+
+		try {
+			if (scenario.isFailed()) {
+				File screenshot = ((TakesScreenshot) drivermanager.getDriver()).getScreenshotAs(OutputType.FILE);
+				FileUtils.copyFile(screenshot, new File("target/screenshots/" + scenario.getName() + ".png"));
 			}
-		    finally {
-				drivermanager.QuitBrowser();
-			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			drivermanager.QuitBrowser();
 		}
 		
+		drivermanager.QuitBrowser();
+
 	}
 
 }

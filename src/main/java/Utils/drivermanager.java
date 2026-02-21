@@ -23,9 +23,16 @@ public class drivermanager {
 			return driver;
 	}
 	
+	public static WebDriver getDriver() {
+        return driver;
+    }
+
+	
 	public static void QuitBrowser() {
-		driver.quit();
-		driver = null;
+		if(driver != null) {
+			driver.quit();
+			driver = null;
+		}
 	}
 
 }
