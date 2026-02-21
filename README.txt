@@ -22,3 +22,27 @@ by these results i will confirm those builds are stable or not and will use Allu
 
 6. Two improvements you would make with more time. 
 reports, browser setup
+
+
+
+1. Setup instructions
+
+I've Used Eclipse as IDE, created maven project with main, test folders along pom.xml there i added Dependencies
+
+2. Install dependencies
+
+I've added Cucumber-Java, cucumber-TestNG, Common-io and Selenium dependencies in POM.xml
+
+3. How to run tests 
+
+I've Used TestNG to run Testcases by creating testing.xml from testrunners which is extended by 
+CucumberTestNGRunnerTests.
+
+4.How to change browser/headless mode
+
+I didn't added code for switching browsers but yes we can have code in Drivermanager by getting values from Property files and headlessmode also we can get it from property files i didn't added these 2 codes
+
+5. Any assumptions made
+
+May be if i had time i will add Browser switching, hadealess mode code as well along with that i will add reports and Jenkins/GitHub CI.
+
