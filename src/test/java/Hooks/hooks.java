@@ -40,6 +40,7 @@ public class hooks {
 		}
 		
 		drivermanager.QuitBrowser();
+		System.out.println("Closing Browser!!");
 
 	}
 
